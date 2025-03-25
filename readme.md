@@ -190,6 +190,18 @@ Hence this approach is a copy-pasted approach based on general risk classficatio
 
 ### 4. Diagnostic Research Agent
 
+#### Core Objectives
+
+1. **Personalization**: Create care plans uniquely tailored to each patient's profile, including diagnoses, symptoms, treatment history, context, and identified risks.
+
+2. **Evidence-Based Grounding**: Ensure all recommendations are firmly anchored in clinical guidelines and best practices, with explicit links to supporting evidence.
+
+3. **Risk Mitigation**: Proactively address identified readmission risks through targeted interventions and monitoring strategies.
+
+4. **Clinical Usability**: Deliver care plans in a clear, structured format that facilitates efficient clinical decision-making and implementation.
+
+5. **Traceability**: Maintain transparent connections between recommendations, clinical reasoning, and source data to support clinician trust.
+
 #### Technical Implementation
 - **Core Architecture**: Hybrid symbolic-neural reasoning system
 - **Components**:
@@ -240,6 +252,19 @@ Hence this approach is a copy-pasted approach based on general risk classficatio
   - Alternative recommendation generation
 
 ### 5. Care Plan Agent
+
+
+#### Core Objectives
+
+1. **Personalization**: Create care plans uniquely tailored to each patient's profile, including diagnoses, symptoms, treatment history, context, and identified risks.
+
+2. **Evidence-Based Grounding**: Ensure all recommendations are firmly anchored in clinical guidelines and best practices, with explicit links to supporting evidence.
+
+3. **Risk Mitigation**: Proactively address identified readmission risks through targeted interventions and monitoring strategies.
+
+4. **Clinical Usability**: Deliver care plans in a clear, structured format that facilitates efficient clinical decision-making and implementation.
+
+5. **Traceability**: Maintain transparent connections between recommendations, clinical reasoning, and source data to support clinician trust.
 
 #### Technical Implementation
 - **Architecture**: Multi-stage pipeline with verification gates
@@ -500,4 +525,6 @@ A person who shows signs of high recovery in a controlled environment, could fai
 #### On Risk Prediction
    To evaluate the Risk Prediction Agent and other agents in the mental health discharge planning system, we create a high-quality dataset with clinician-generated profiles as ground truth, split into controlled (low variability) and high-variability cases. For the Risk Prediction Agent, clinicians provide risk assessments (e.g., “70% relapse risk, factors: isolation, non-adherence”), while for high-variability cases, they also note missing data needs (e.g., “requires trauma history”). An LLM compares agent outputs to these profiles, measuring precision (risks matching clinician’s), recall (clinician risks captured), and F1-score, with penalties for missed critical risks (e.g., -5% per miss). Extra risks identified by the agent are logged as potential strengths for later validation.
    In controlled cases, we test baseline accuracy (e.g., “Agent: 60% risk, isolation” vs. “Clinician: 65%, isolation”), refining the agent’s logic (e.g., emphasize event nodes) if misses occur. For high-variability cases, the agent suggests data gaps (e.g., “request substance use history”), scored against clinician annotations for accuracy. This dual approach—refining core performance on simple cases and enhancing adaptability on complex ones—extends to other agents (e.g., Diagnostic Reasoning Agent: diagnosis match; Care Plan Agent: intervention overlap). Iterative testing and feedback ensure agents align with clinician expertise, improving reliability across scenarios while maintaining coherence and actionability.
+
+
 
