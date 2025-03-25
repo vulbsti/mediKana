@@ -429,7 +429,7 @@ Hence this approach is a copy-pasted approach based on general risk classficatio
 
 ### LLM and RAG Components
 
-- **Base Models**: Clinical domain-specific models (BioGPT, ClinicalBERT)
+- **Base Models**: Clinical domain-specific models (BioGPT, ClinicalBERT) for embeddings, Retrieval, NER and LLMs like Claude/GPT API for reasoning and summarisation
 - **RAG Architecture**: Dense passage retrieval with BM25 hybrid search
 - **Vector Database**: Pinecone for embedding storage
 - **Prompt Engineering**: Chain-of-thought templates with few-shot examples
